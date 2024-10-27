@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Emotion Recognition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="home-page">
+        <div class="section">
+            <h1>SPEECH EMOTION RECOGNITION</h1>
+            <button class="btn" id="project-description">About</button>
+            <button class="btn" id="get-started">Get Started</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="description-page">
+        <div class="section">
+            <h1>PROJECT DESCRIPTION</h1>
+            <p>This Speech Emotion Recognition (SER) project uses deep learning to classify emotions from audio recordings.
+                Utilizing the Toronto Emotional Speech Set (TESS) and advanced preprocessing techniques like MFCC feature extraction,
+                the project employs an LSTM neural network to accurately detect emotions such as anger, happiness, and sadness in speech.
+                The model is designed to help in various applications, including emotion analysis in customer service and mental health monitoring.
+            </p>
+            <button class="btn" id="back-home">Back to Home</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="get-started-page">
+        <div class="section">
+            <h1>SPEECH EMOTION DETECTION</h1>
+            <p>Here you can start exploring the project and dive into the details.</p>
+            
+            <!-- Drag and Drop Area -->
+            <div id="drag-drop-area" class="drag-drop-area">
+                <p>Drag and drop audio files here or click to upload</p>
+                <input type="file" id="file-input" accept="audio/*" style="display: none;" multiple>
+            </div>
+            
+            <!-- Output Display -->
+            <div id="file-output"></div>
+
+            <button class="btn" id="back-home-2">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

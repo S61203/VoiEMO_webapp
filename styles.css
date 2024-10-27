@@ -1,0 +1,107 @@
+:root {
+    --background-dark: #1c1b29; /* Dark background color */
+    --background-light: #f5f5f5; /* Light background color */
+    --text-color-dark: #ffffff;  /* White text color for dark mode */
+    --text-color-light: #000000; /* Black text color for light mode */
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-color-dark);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.btn {
+    background-color: #6b819b;
+    color: #000;
+    padding: 12px 24px;
+    margin-top: 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #5a6f88;
+}
+
+.drag-drop-area {
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    border: 2px dashed #6b819b;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 20px auto;
+    color: #6b819b;
+    transition: background-color 0.3s;
+}
+
+.drag-drop-area:hover {
+    background-color: #5a6f88;
+    color: #ffffff;
+}
+
+#file-output {
+    margin-top: 20px;
+    text-align: left;
+}
+
+
+/* Media Query for Light Mode */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: var(--background-light);
+        color: var(--text-color-light);
+    }
+}
+
+/* Responsive Font Sizes and Layout for Smaller Screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+.hidden {
+    display: none;
+}

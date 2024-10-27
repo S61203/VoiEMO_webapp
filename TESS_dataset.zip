@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Toronto emotional speech set (TESS) | Kaggle</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="A dataset for training emotion (7 cardinal emotions) classification in audio " />
+    <meta name="keywords" content="audio,gender,signal processing" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="CNYV0nNfYHpgAiJhGXFIrg==" type="text/javascript">
+    window["pageRequestStartTime"] = 1727759613907;
+    window["pageRequestEndTime"] = 1727759613998;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <script nonce="CNYV0nNfYHpgAiJhGXFIrg==" id="gsi-client" src="https://accounts.google.com/gsi/client" async defer></script>
+  <script nonce="CNYV0nNfYHpgAiJhGXFIrg==">window.KAGGLE_JUPYTERLAB_PATH = "/static/jl2-static/jupyterlab-index-de53cf5bbd46ca5e45d1.html";</script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+  <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="CNYV0nNfYHpgAiJhGXFIrg==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+
+    <link rel="canonical" href="https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=dne" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=3b0c9a68405c162e42e3" />
+
+  
+    
+ 
+      <script nonce="CNYV0nNfYHpgAiJhGXFIrg==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="CNYV0nNfYHpgAiJhGXFIrg==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-T7QHS60L4Q', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Datasets'
+        });
+    </script>
+    <script nonce="CNYV0nNfYHpgAiJhGXFIrg==" async src="https://www.googletagmanager.com/gtag/js?id=G-T7QHS60L4Q"></script>
+
+  
+    
+    <meta property="og:url" content="https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess" />
+    <meta property="og:title" content="Toronto emotional speech set (TESS)" />
+    <meta property="og:description" content="A dataset for training emotion (7 cardinal emotions) classification in audio " />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/kaggle-datasets-images/316368/639622/f527677157ff71de32715f6fd066384f/dataset-card.png?t=2019-08-24-23-16-38" />
+    <meta property="fb:app_id" content="2665027677054710" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+        <meta name="twitter:creator" content="@ejlok1" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+            <script nonce="CNYV0nNfYHpgAiJhGXFIrg==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"Toronto emotional speech set (TESS)","description":"### Context\n\nI'm on a journey to create an emotion classifier from audio and the TESS dataset is one of the 4 key datasets that I was lucky to stumble upon. What's interesting is that this dataset is female only and is of very high quality audio. Most of the other dataset is skewed towards male speakers and thus brings about a slightly imbalance representation. So because of that, this dataset would serve a very good training dataset for the emotion classifier in terms of generalisation (not overfitting)\n\n\n### Content\n\nThere are a set of 200 target words were spoken in the carrier phrase \"Say the word _____' by two actresses (aged 26 and 64 years) and recordings were made of the set portraying each of seven emotions (anger, disgust, fear, happiness, pleasant surprise, sadness, and neutral). There are 2800 data points (audio files) in total.\n \nThe dataset is organised such that each of the two female actor and their emotions are contain within its own folder. And within that, all 200 target words audio file can be found. The format of the audio file is a WAV format \n\n### Acknowledgements\n\nI wanted to thank University of Toronto for putting together this awesome [dataset](https://tspace.library.utoronto.ca/handle/1807/24487)! \n","url":"https://www.kaggle.com/ejlok1/toronto-emotional-speech-set-tess","version":1,"keywords":["data type, audio","subject, people and society, people, gender","analysis, signal processing"],"license":{"@type":"CreativeWork","name":"Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)","url":"https://creativecommons.org/licenses/by-nc-nd/4.0/"},"identifier":["316368"],"includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"Eu Jin Lok","url":"https://www.kaggle.com/ejlok1","image":"https://storage.googleapis.com/kaggle-avatars/thumbnails/3346-kg.png"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess/download?datasetVersionNumber=1","contentSize":"448572034 bytes"}],"commentCount":1,"dateModified":"2019-08-24T23:03:36.797Z","discussionUrl":"https://www.kaggle.com/ejlok1/toronto-emotional-speech-set-tess/discussion","alternateName":"A dataset for training emotion (7 cardinal emotions) classification in audio ","isAccessibleForFree":true,"thumbnailUrl":"https://storage.googleapis.com/kaggle-datasets-images/316368/639622/f527677157ff71de32715f6fd066384f/dataset-card.png?t=2019-08-24-23-16-38","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":1},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":28614},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":125216},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":210}]}</script>
+        
+
+  
+    
+
+  
+    
+
+
+    <script nonce="CNYV0nNfYHpgAiJhGXFIrg==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="CNYV0nNfYHpgAiJhGXFIrg==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="CNYV0nNfYHpgAiJhGXFIrg==" src="/static/assets/runtime.js?v=235f1db71978d3f3612c"></script>
+  <script nonce="CNYV0nNfYHpgAiJhGXFIrg==" src="/static/assets/vendor.js?v=823ca33e8a5ffb948f6a"></script>
+  <script nonce="CNYV0nNfYHpgAiJhGXFIrg==" src="/static/assets/app.js?v=6f08091d85532e91a1fc"></script>
+    <script nonce="CNYV0nNfYHpgAiJhGXFIrg==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '0'
+      }
+    </script>
+</head>
+<body>
+<main>
+    
+
+
+
+
+
+<div id="site-container"></div>
+
+<div id="site-body" class="hide">
+    
+
+
+<script nonce="CNYV0nNfYHpgAiJhGXFIrg==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: ["Safe.js"],
+    });
+</script>
+<script type="text/javascript" nonce="CNYV0nNfYHpgAiJhGXFIrg==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    // Always use the production asset in local dev, which is served from GCS. We tried to proxy and / or serve this
+    // in a better way in localhost, but it didn't work out. See b/328073416#comment8 for details.
+    const forceProdHost = window.location.hostname === "localhost";
+    lib.src = `${forceProdHost ? "https://www.kaggle.com" : ""}/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+
+
+
+
+</div>
+
+
+
+
+  </main>
+</body>
+
+</html>
